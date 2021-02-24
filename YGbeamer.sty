@@ -1,0 +1,80 @@
+% Yannis Galanakis
+% galanakis.gian@gmail.com
+% February 2021
+%----------------------------------------------------------------------------------
+
+\ProvidesPackage{YGbeamer}
+\usepackage[english]{babel}
+\usepackage{metalogo}
+\usepackage{listings}
+\usepackage{fontspec}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usetikzlibrary{fit,            % new
+                tikzmark}       % new
+\usepackage{booktabs,
+            cellspace,          % new
+            multirow}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{psfrag}
+\usetikzlibrary{intersections,patterns,pgfplots.fillbetween}
+\usetikzlibrary{decorations.pathreplacing, calc}
+\usepackage{fontawesome5}
+\usepackage{qrcode}
+\usepgfplotslibrary{dateplot}
+\usepackage{datetime}
+\usepackage[scale=2]{ccicons}
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH], \THEYEAR}
+\usepackage{animate}
+\usepackage{subcaption}
+
+% theme
+\usetheme[style=light]{Nord}
+% font
+\setmainfont{Yanone Kaffeesatz}
+\setmonofont{DejaVu Sans Mono}
+\setsansfont[]{Fira Sans}
+%\setmonofont[]{Fira Mono}
+%\setmainfont{Source Sans Pro Light}[Mapping=tex-text,
+%                                    BoldFont = SourceSansPro-Regular, 
+%                                    ItalicFont= Source Sans Pro Light Italic]
+
+%appendix numbering (increase individual slide number but not total number)
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
+
+\pgfplotsset{compat=newest}
+
+% To set the highlighting boxes red.
+\tikzset{%
+    hl/.style={
+align=center,
+set fill color=gray!10,
+    set border color=erose,
+ %   left offset = {,.5},
+ right offset={0.3,-0.3},
+  },
+}
+
+\pgfplotsset{
+    discard if not/.style 2 args={
+         x filter/.code={
+             \edef\tempa{\thisrow{#1}}
+             \edef\tempb{#2}
+             \ifx\tempa\tempb
+             \else
+                 \def\pgfmathresult{inf}
+             \fi
+         }
+     }
+ }
+
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations}
