@@ -1,5 +1,5 @@
 # Template for Beamer Presentation
-My LaTeX presentation template based on the [`beamerthemeNord`](https://github.com/junwei-wang/beamerthemeNord)
+My LaTeX presentation template based on the [`beamerthemeNord`](https://github.com/junwei-wang/beamerthemeNord) by Junwei Wang.
 
 # Pros of this template
 1. Easy to adjust between *light* and *dark* theme.
