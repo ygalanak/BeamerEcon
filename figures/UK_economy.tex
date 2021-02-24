@@ -1,0 +1,41 @@
+% UK Economy graph
+	\begin{tikzpicture}
+		\begin{axis}[
+			%width = \textwidth,
+			axis lines* = left,
+			ybar,
+			bar shift = 0pt,
+			bar width = 2pt,
+			ylabel={GDP annual growth rate},
+			xlabel = Year,
+			xticklabel style={rotate=90,anchor=east, font=\tiny},
+			xtick=data,
+			xlabel style={yshift=-.01cm},
+			extra x ticks={1991, 2008, 2009},
+	%		nodes near coords,
+			grid=none,
+			tick label style={/pgf/number format/assume math mode},
+			enlarge x limits,
+			xticklabel style={/pgf/number format/set thousands separator={}}, 
+			]
+			
+	\addplot+[NordBlue, fill=NordBlue]  table [x=Year,y=GDP_gr, col sep=comma] {figures/UK_economy.csv};
+	\addplot+[NordMagenta, fill=NordMagenta]  table [x=Year,y=GDP_d, col sep=comma] {figures/UK_economy.csv};
+	\draw[dashed] (axis cs: 2009,-4.5) -- (axis cs:2009,4.5);	
+		\end{axis}
+	
+		\begin{axis}[
+	%	width = \textwidth, 
+		hide x axis,
+		axis y line* = right,
+		ylabel near ticks, yticklabel pos=right,
+		grid = none,
+		xlabel style={yshift=-.01cm},
+		tick label style={/pgf/number format/assume math mode},
+		enlarge x limits,
+		ylabel= Unemployment Rate
+		]
+	\addplot[very thick, NordCyan]  table [x=Year,y=Unempl, col sep=comma] {figures/UK_economy.csv};	
+	\node[color=NordCyan] at (axis cs: 2002, 6) {\scriptsize UR, total};
+		\end{axis}
+	\end{tikzpicture}
