@@ -1,3 +1,5 @@
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+
 # Template for Beamer Presentation
 My LaTeX presentation template based on the [`beamerthemeNord`](https://github.com/junwei-wang/beamerthemeNord) by Junwei Wang.
 
